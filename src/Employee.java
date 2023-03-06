@@ -3,14 +3,15 @@ public class Employee {
     private String fio;
     private int departament;
     private int salary;
-    public static int counter = 0;
-    public int id;
+    private static int counter = 0;
+    private int id;
 
     public Employee(String fio, int departament, int salary) {
         this.fio = fio;
         this.departament = departament;
         this.salary = salary;
-        id = ++counter;
+        counter += 1;
+        id = counter;
     }
 
     public String getFio() {
@@ -26,7 +27,7 @@ public class Employee {
         return departament;
     }
 
-    public double getSalary() {
+    public int getSalary() {
         return salary;
     }
 
@@ -41,7 +42,11 @@ public class Employee {
     public int getId() {
         return id;
     }
+
+
 }
+
+
 
 
 
