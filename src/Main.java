@@ -4,19 +4,11 @@ import java.util.Stack;
 public class Main {
     public static Employee employeeArr[] = new Employee[10];
 
-
-    public static int generateRandomDepartament(int bound) {
+    public static int generateRandomInt(int bound) {
         java.util.Random random = new java.util.Random();
-        int department = random.nextInt(bound);
-        return department;
+        int randomInt = random.nextInt(bound);
+        return randomInt;
     }
-
-    public static int generateRandomSalary(int bound) {
-        java.util.Random random = new java.util.Random();
-        int salary = random.nextInt(bound);
-        return salary;
-    }
-
     public static void printEmployee(Employee[] arr) {
 
         for (int i = 0; i < arr.length; i++) {
@@ -43,7 +35,7 @@ public class Main {
     }
 
     public static String findEmployeeMinSalary(Employee[] arr) {
-        int salary = 100_000;
+        int salary = employeeArr[0].getSalary();
         int idMinSalaryEmployee = 0;
 
         for (int i = 0; i < arr.length; i++) {
@@ -168,40 +160,39 @@ public class Main {
     public static void main(String[] args) {
         System.out.println("Курсовая работа 1.");
 
-        employeeArr[0] = new Employee("Ivanov I.I.", generateRandomDepartament(5), generateRandomSalary(100000));
-        employeeArr[1] = new Employee("Petrov V.V.", generateRandomDepartament(5), generateRandomSalary(100000));
-        employeeArr[2] = new Employee("Stepanov V.N.", generateRandomDepartament(5), generateRandomSalary(100000));
-        employeeArr[3] = new Employee("Fokin K.A.", generateRandomDepartament(5), generateRandomSalary(100000));
-        employeeArr[4] = new Employee("Vasilkin V.P.", generateRandomDepartament(5), generateRandomSalary(100000));
-        employeeArr[5] = new Employee("Kormishina L.N", generateRandomDepartament(5), generateRandomSalary(100000));
-        employeeArr[6] = new Employee("Korma A.N", generateRandomDepartament(5), generateRandomSalary(100000));
-        employeeArr[7] = new Employee("Stal A.P", generateRandomDepartament(5), generateRandomSalary(100000));
-        employeeArr[8] = new Employee("Ulyanov L.I.", generateRandomDepartament(5), generateRandomSalary(100000));
-        employeeArr[9] = new Employee("Romanov P.A", generateRandomDepartament(5), generateRandomSalary(100000));
+        employeeArr[0] = new Employee("Ivanov I.I.", generateRandomInt(5), generateRandomInt(100000));
+        employeeArr[1] = new Employee("Petrov V.V.", generateRandomInt(5), generateRandomInt(100000));
+        employeeArr[2] = new Employee("Stepanov V.N.", generateRandomInt(5), generateRandomInt(100000));
+        employeeArr[3] = new Employee("Fokin K.A.", generateRandomInt(5), generateRandomInt(100000));
+        employeeArr[4] = new Employee("Vasilkin V.P.", generateRandomInt(5), generateRandomInt(100000));
+        employeeArr[5] = new Employee("Kormishina L.N", generateRandomInt(5), generateRandomInt(100000));
+        employeeArr[6] = new Employee("Korma A.N", generateRandomInt(5), generateRandomInt(100000));
+        employeeArr[7] = new Employee("Stal A.P", generateRandomInt(5), generateRandomInt(100000));
+        employeeArr[8] = new Employee("Ulyanov L.I.", generateRandomInt(5), generateRandomInt(100000));
+        employeeArr[9] = new Employee("Romanov P.A", generateRandomInt(5), generateRandomInt(100000));
 
-//
-//        System.out.println("Выполнение пункта 1.");//вывод данных по всем сотрудникам
-          printEmployee(employeeArr);
-//
-//        System.out.println("Выполнение пункта 2.");//расчет суммы зарплат за месяц
-//        System.out.println("Сумма затрат на зарплаты за месяц составила = " + calculateSalaryOfMonth(employeeArr));
-//
-//        System.out.println("Выполнение пункта 3.");//найти самую сотрудника с самой низкой зарплатой
-//        System.out.println(findEmployeeMinSalary(employeeArr));
-//
-//        System.out.println("Выполнение пункта 4.");//найти сотрудника с самой высокой зарплатой
-//        System.out.println(findEmployeeMaxSalary(employeeArr));
-//
-//        System.out.println("Выполнение пункта 5.");//расчет среднего значения зарплаты
-//        System.out.println("Среднее значение зарплаты составило " + calculateAverageSalary(employeeArr));
-//        System.out.println("Выполнение пункта 6.");//получение фио всех сотрудников
-//        getAllFio(employeeArr);
-//        System.out.println("Повышенная сложность");
-//        int indexSalaryPercent = 20;//% изменения ЗП
-//        indexSalary(employeeArr, indexSalaryPercent);
-//        printEmployee(employeeArr);
-        System.out.println();
-        System.out.println("Повышенная сложность");
+
+            System.out.println("Выполнение пункта 1.");//вывод данных по всем сотрудникам
+                printEmployee(employeeArr);
+
+            System.out.println("Выполнение пункта 2.");//расчет суммы зарплат за месяц
+            System.out.println("Сумма затрат на зарплаты за месяц составила = " + calculateSalaryOfMonth(employeeArr));
+
+            System.out.println("Выполнение пункта 3.");//найти самую сотрудника с самой низкой зарплатой
+            System.out.println(findEmployeeMinSalary(employeeArr));
+
+            System.out.println("Выполнение пункта 4.");//найти сотрудника с самой высокой зарплатой
+            System.out.println(findEmployeeMaxSalary(employeeArr));
+            System.out.println("Выполнение пункта 5.");//расчет среднего значения зарплаты
+            System.out.println("Среднее значение зарплаты составило " + calculateAverageSalary(employeeArr));
+            System.out.println("Выполнение пункта 6.");//получение фио всех сотрудников
+            getAllFio(employeeArr);
+            System.out.println("Повышенная сложность");
+            int indexSalaryPercent = 20;//% изменения ЗП
+            indexSalary(employeeArr, indexSalaryPercent);
+            printEmployee(employeeArr);
+            System.out.println();
+            System.out.println("Повышенная сложность");
 
             System.out.println("Сотрудник с самой минимальной зарплатой  в отделе "+ minSalaryEmployee(2));//0
             System.out.println("Сотрудник с самой максимальной зарплатой в отделе " +maxSalaryEmployee(3));//1
